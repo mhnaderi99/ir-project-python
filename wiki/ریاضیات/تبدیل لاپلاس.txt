@@ -1,0 +1,124 @@
+ترادیس لاپلاس (یا تبدیل لاپلاس)  در ریاضیات یک تبدیل انتگرالی است که بسیار پرکاربرد است. ترادیس لاپلاس با نماد  در واقع عملگری خطی از تابع (f (t با آرگومان حقیقی (t (t ≥ ۰ به تابع (F (s با آرگومان مختلط s است. در بسیاری از کاربردهای عملی، این ترادیس به صورت دوسویه عمل می‌کند. ویژگی مهم این ترادیس آن است که بسیاری از رابطه‌ها و تغییراتی که بر روی تابع اصلی (f (t برقرار هستند، در ترادیس یافتهٔ آن (F (s نیز با رابطه‌ای ساده و منطقی برقرار‌اند.  
+
+این ترادیس به افتخار پیر لاپلاس یعنی کسی که آن را در یکی از کارهایش بر روی نظریهٔ احتمالات معرفی کرده بود، ترادیس لاپلاس گذاشته شده‌است.
+
+ترادیس لاپلاس شبیه به ترادیس یا تبدیل فوریه است با این تفاوت که ترادیس فوریه یک تابع را به حالت‌های ارتعاشی‌اش تجزیه می‌کند ولی ترادیس لاپلاس آن را به momentهایش تجزیه می‌کند. ترادیس‌های لاپلاس و فوریه هر دو برای حل معادله‌های دیفرانسیلی و انتگرالی کاربرد دارند. در فیزیک و مهندسی از این ترادیس برای تحلیل سامانهٔ نامتغیرهای خطی زمان مانند مدارهای الکتریکی، ابزارهای نوری، و سامانه‌های مکانیکی استفاده می‌شود. در بیشتر موارد، ترادیس لاپلاس برای تبدیل سامانه‌هایی با ورودی و خروجی وابسته به زمان به سامانه‌ای وابسته به بسامد زاویه‌ای مختلط با یکای رادیان بر واحد زمان است. به عبارت دیگر، اگر سامانه‌ای را در نظر بگیریم که توصیف ریاضی یا تابع ورودی و خروجی آن را داشته باشیم، ترادیس لاپلاس آن به ما کمک می‌کند تا تابع جایگزینی را پیدا کنیم که تحلیل رفتار این تابع را آسان‌تر می‌کند.
+
+روش تبدیل لاپلاس، روش عملیاتی است که می‌تواند در حل معادلات دیفرانسیل خطی سودمند باشد . به کمک تبدیل‌های لاپلاس می‌توان بسیاری از توابع متداول نظیر توابع سینوسی، توابع سینوسی میرا، و توابع نمایی را به توابع جبری با یک متغیر مختلط تبدیل کرد . عملیات جبری در صفحات مختلط می‌توانند جای عملیاتی مانند مشتق‌گیری و انتگرال‌گیری را بگیرند . از این رو یک معادله دیفرانسیل خطی را می‌توان به یک معادله جبری با یک متغیر مختلط تبدیل کرد . آنگاه جواب معادله دیفرانسیل را می‌توان به کمک جدول تبدیل لاپلاس یا روش تجزیه به کسرهای ساده بدست آورد .
+
+یکی از مزایای روش تبدیل لاپلاس در این است که استفاده از روش‌های ترسیمی برای پیش‌بینی عملکرد سیستم را بدون حل واقعی معادلات دیفرانسیل سیستم میسر می‌سازد . مزیت دیگر آن در این است که با حل معادله دیفرانسیل، می‌توان هر دو مؤلفه گذرا و حالت ماندگار جواب را یکجا بدست آورد .
+
+ پیشینه 
+ترادیس لاپلاس به بزرگداشت ریاضی‌دان و ستاره‌شناس فرانسوی پیر لاپلاس نامگذاری شده‌است. او اولین بار از این ترادیس در یکی از کارهایش بر روی نظریهٔ احتمالات استفاده کرد. از سال ۱۷۴۴ لئونارد اویلر شروع به تحقیق دربارهٔ انتگرال‌هایی با فرم زیر کرد:
+
+ 
+
+او از این ترادیس برای حل معادله‌های دیفرانسیل استفاده کرد ولی بیش از آن در این زمینه پیگیری نکرد., (۱۷۵۳) and (۱۷۶۹) ژوزف لویی لاگرانژ از کسانی بود که از اویلر تأثیر گرفته‌اند، او در مطالعاتش بر روی انتگرال‌گیری از تابع چگالی احتمال رابطه‌هایی با شکل زیر را به دست آورد:
+
+ 
+
+برخی تاریخ نگاران امروزی از آن با نام نظریهٔ ترادیس نوین لاپلاس  یاد کرده‌اند.
+
+به نظر می‌رسد این گونه انتگرال‌ها اولین بار در سال ۱۷۸۲ مورد توجه لاپلاس قرار گرفته‌اند. در آن دوران، او تلاش می‌کرد تا مانند اویلر از خود انتگرال‌ها به عنوان راه حل معادله‌ها استفاده کند.. وی در سال ۱۷۸۵ گام اصلی را به جلو برداشت و به جای این که تنها به دنبال به دست آوردن یک جواب انتگرالی باشد سعی کرد بر روی خود ترادیس، تغییرهای لازم را بدهد. او ابتدا از انتگرالی با شکل زیر استفاده کرد:
+
+ 
+
+ تعریف 
+ترادیس لاپلاس تابع (f (t در مجموعهٔ اعداد حقیقی برای t ≥ ۰ تابع (F (s است که به صورت زیر تعریف می‌شود:
+
+ 
+
+پارامتر s عددی مختلط است که:
+  با σ و ω حقیقی.
+
+ ترادیس لاپلاس دو طرفه 
+این ترادیس روی تابع‌هایی که روی کل  تعریف شده‌اند اعمال می‌شود و به صورت زیر است:
+
+ ویژگی‌های تبدیل لاپلاس 
++ ویژگی‌های تبدیل لاپلاس یک طرفه  حوزه زمان حوزه  توضیح رابطه خطی
+  
+  
+  Can be proved using basic rules of integration. Frequency-domain derivative
+  
+  
+   is the first derivative of  with respect to . Frequency-domain general derivative
+  
+  
+  More general form, th derivative of . Derivative
+  
+  
+   is assumed to be a differentiable function, and its derivative is assumed to be of exponential type. This can then be obtained by integration by parts Second derivative
+  
+  
+   is assumed twice differentiable and the second derivative to be of exponential type. Follows by applying the Differentiation property to . General derivative
+  
+  
+   is assumed to be -times differentiable, with th derivative of exponential type. Follows by mathematical induction. Frequency-domain integration
+  
+  
+  This is deduced using the nature of frequency differentiation and conditional convergence. Time-domain integration
+  
+  
+   is the Heaviside step function and  is the convolution of  and . Frequency shifting
+  
+  
+  Time shifting
+  
+  
+   is the Heaviside step function Time scaling
+  
+  
+   Multiplication
+  
+  
+  The integration is done along the vertical line  that lies entirely within the region of convergence of . Convolution
+  
+  
+  Complex conjugation
+  
+  
+  Cross-correlation
+  
+  
+  Periodic function
+  
+  
+   is a periodic function of period  so that , for all . This is the result of the time shifting property and the geometric series.
+
+ تبدیل لاپلاس‌های پرکاربرد 
+ تابع حوزه زمان Laplace -حوزه ناحیه تبدیل منبع unit impulse   all  inspection delayed impulse   time shift ofunit impulse unit step    integrate unit impulse delayed unit step    time shift ofunit step ramp    integrate unitimpulse twice th power(for integer )   () Integrate unitstep  times th power(for complex )    – provides the case for real .http://mathworld.wolfram.com/LaplaceTransform.html – Wolfram Mathword provides case for complex  th root    Set  above. th power with frequency shift    Integrate unit step,apply frequency shift delayed th powerwith frequency shift    Integrate unit step,apply frequency shift,apply time shift exponential decay    Frequency shift ofunit step two-sided exponential decay(only for bilateral transform)    Frequency shift ofunit step exponential approach    Unit step minusexponential decay sine     cosine     hyperbolic sine     hyperbolic cosine     exponentially decayingsine wave     exponentially decayingcosine wave     natural logarithm     Bessel functionof the first kind,of order n   ()  Error function    Explanatory notes:
+
+  represents the Heaviside step function.
+  represents the Dirac delta function.
+  represents the Gamma function.
+  is the Euler–Mascheroni constant.
+
+ , a real number, typically represents time,although it can represent any independent dimension.
+  is the complex frequency domain parameter, and  is its real part.
+  are real numbers.
+  is an integer.
+
+ پانویس 
+
+ منابع 
+ 
+
+ نوین 
+
+ .
+
+ تاریخی 
+
+ .
+ .
+ ، Chapters 3–5.
+ .
+ .
+
+ پیوند به بیرون 
+ تبدیل لاپلاس در متلب
+
+رده:تبدیل‌های انتگرالی
+رده:تبدیل‌های لاپلاس
+رده:تحلیل فوریه
+رده:معادلات دیفرانسیل

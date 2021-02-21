@@ -1,0 +1,220 @@
+بندانگشتی|تبدیل سریع فوریه تابلوی مونا لیزا
+
+تبدیل فوریۀ سریع  (Fast Fourier transform - FFT) نام الگوریتمی‌ست برای انجام تبدیلات مستقیم و معکوس فوریۀ گسسته به صورتی سریع و بسیار کارآمد. تعداد زیادی الگوریتم‌های تبدیل فوریه سریع مجزا وجود دارد.
+
+یک تبدیل فوریه سریع تجزیه یک رشته از مقادیر به مؤلفه‌هایی با فرکانس‌های متفاوت است. این عملیات در بسیاری از رشته‌ها مفید است (ویژگی‌ها و کاربردهای تبدیل فوریه گسسته را مشاهده کنید) اما محاسبه مستقیم آن از تعریف گاهی اوقات در عمل بسیار کند است. تبدیل فوریه سریع یک راه برای محاسبه همان نتایج به‌طور سریع تر است؛ محاسبه تبدیل فوریه گسسته برای n نقطه با استفاده از تعریف  عملیات ریاضی نیاز دارد در حالی که تبدیل فوریه سریع می‌تواند همان نتایج را در  عملیات، محاسبه نماید.
+
+بندانگشتی|مقایسه تبدیل سریع فوریه و تبدیل فوریه گسسته
+این تفاوت در سرعت می‌تواند بسیار چشمگیر باشد، مخصوصاً برای مجموعه داده‌های بزرگ. در جایی که n ممکن است در عمل هزاران یا میلیون‌ها باشد، زمان محاسبه در برخی موارد می‌تواند به اندازه چند مرتبه کاهش پیدا کند و بهبود آن در حدود  مرتبه‌است. این بهبود عظیم موجب شده تا بسیاری از الگوریتم‌های عملی تبدیل فوریه گسسته را به صورت تبدیل فوریه سریع پیاده‌سازی نمایند؛ بنابراین تبدیل فوریه سریع در محدوده متنوعی از کاربردها از پردازش سیگنال دیجیتال و حل معادلات دیفرانسیل با مشتقات جزئی (پاره‌ای) تا ضرب مقادیر بزرگ صحیح به کار می‌رود.
+
+از تبدیل فوریه سریع به عنوان «مهم‌ترین الگوریتم عددی عصر زندگی ما» یاد می‌شود.
+
+ تاریخچه 
+در طول تمامی سده گذشته و به خصوص در طی ۵۰ سال آخر آن صنایع گوناگون و رشته‌های مختلف دانشگاهی را می‌توان ذکر کرد که به واسطه اعمال ایده‌ها و تکنیک‌های گوناگون فوریه به نحو کاملی شکوفا و پررونق شده‌اند.
+
+ تعریف و سرعت 
+تبدیل فوریه سریع تبدیل فوریه گسسته را محاسبه می‌کند و دقیقاً همان نتایجی را تولید می‌کند که مستقیماً با تعریف تبدیل فوریه گسسته به دست می‌آید تنها تفاوت آن این است که بسیار سریع تر است.
+
+اگر اعداد مختلط x۰، ....، xN-1 را در نظر بگیریم تبدیل فوریه گسسته با فرمول زیر تعریف می‌شود:
+
+محاسبه مستقیم با این تعریف نیازمند  عملیات است در حالی که N خروجی  و هر خروجی نیازمند جمع N جمله‌است یک تبدیل فوریه سریع روشی است برای محاسبه همان نتایج در زمان  عملیات به‌طور دقیق تر همه الگوریتم‌های شناخته شده تبدیل فوریه سریع نیازمند  عملیات هستند (البته از لحاظ فنی O فقط یک باند بالا مشخص می‌کند) درحالی که تاکنون حقیقت ثابت شده‌ای وجود ندارد که پیچیدگی بهتر غیرممکن است.
+
+برای نشان دادن ذخیره یک تبدیل فوریه سریع، می‌توان تعداد ضرب‌ها و جمع‌های مختلط را شمارش نمود. در عمل، کارایی واقعی روی رایانه‌های مدرن با فاکتورهایی غیر از علم حساب می‌باشد و یک موضوع پیچیده‌است اما بهبود کلی از  به  همچنان باقی است.
+
+ الگوریتم 
+Cooley–Tukey FFT algorithm رایج‌ترین الگوریتم تبدیل فوریه سریع الگوریتم کولی-توکی است که یک الگوریتم تقسیم و حل است که به صورت بازگشتی یک مسئله تبدیل فوریه گسسته را به سایز مرکب از N = N۱N۲ می‌شکند و به مسئله تبدیل فوریه گسسته با اندازه‌های N۱ و N۲ تبدیل می‌کند که به  ضرب ریشه‌های مختلط واحد نیاز دارد و به‌طور سنتی فاکتورهای دست زدن آرام نام دارند. (جنتلمن و سنده، ۱۹۶۶)
+
+این روش و ایده عمومی تبدیل فوریه سریع در سال ۱۹۶۵ با انتشارات کولی و توکی معروف شد اما بعدها کشف شد که الگوریتم پیشنهادی این دو نفر قبلاً توسط گاوس در سال ۱۸۰۵ به دست آمده بوده‌است.
+
+این الگوریتم در هر مرحله مسئله را به دو تکه با اندازه N/۲ تقسیم می‌کند و بنابراین به اندازه توانی از ۲ محدود است اما می‌توان با فاکتورگیری در حالت کلی مورد استفاده قرار گیرد.
+
+بندانگشتی|چگونگی سرعت بخشی در تبدیل فوریه سریع
+
+ مسائل محاسباتی 
+ باند پیچیدگی و شمارش عملیات‌ها 
+میزان کمینه پیچیدگی الگوریتم‌های تبدیل سریع فوریه چقدر است؟ آیا می‌توانند سریع‌تر از  باشند؟
+
+یکی از سوالات دیرینه علاقه‌مندان این نظریه اثبات باند کمینه پیچیدگی و شمارش تعداد دقیق عملیات لازم برای تبدیل فوریه سریع است و همچنان این مسئله به صورت باز باقی‌مانده‌است. حتی به صورت دقیق ثابت نشده‌است که تبدیل فوریه گسسته دقیقاً به  (یعنی  یا بیشتر) مقدار عملیات نیاز دارد؛ حتی برای گزینه‌های ساده با اندازهٔ توانی از ۲. در حالی که هیچ الگوریتمی با پیچیدگی کمتر نیز شناخته نشده‌است. به‌طور معمول، معمولاً در چنین سوالاتی روی شمارش عملیات‌های ریاضی تمرکز می‌کنیم اگرچه کارایی واقعی روی رایانه‌های امروزی به وسیله بسیاری از فاکتورهای دیگر مانند کش و موازی سازی پردازنده و بهبود آن‌ها استوار است.
+
+ دقت و تقریب 
+تعداد کمی از الگوریتم‌های تبدیل سریع فوریه که در اینجا مطرح شد برای محاسبه مقدار تقریبی تبدیل فوریه گسسته بود. این الگوریتم‌ها خطاهایی دارند که به‌طور قراردادی کوچک هستند و از افزایش بسیار زیاد محاسبات جلوگیری می‌کنند. چنین الگوریتم‌هایی سرعت زیاد را با خطای تقریبی بسیار کمی معامله می‌کنند. به عنوان مثال الگوریتم تبدیل فوریه سریع ادلمن (Edelman) در ۱۹۹۹ موفق شد تا نیازهای ارتباطی برای محاسبات موازی را با کمک روش سریع سازی مالتی پل کمینه نماید.
+
+حتی الگوریتم‌های دقیق تبدیل فوریه سریع نیز دارای مقادیری خطا به علت محدود بودن دقت محاسبات ممیز شناور مورد استفاده می‌باشند اما این خطاها عموماً کاملاً کوچک هستند. بیشینه مقدار خطا در خطاهای نسبی برای الگوریتم کولی - توکی  است که با  میزان خطا برای فرمول تبدیل فوریه گسسته نیوی می‌توان مقایسه نمود. بدین ترتیب که ε دقت نسبی ماشین محاسبه گر در محاسبات ممیز شناور است.
+
+ پیاده‌سازی 
+ پیاده‌سازی با جاوا 
+یک نمونهٔ پیاده‌سازی الگوریتم تبدیل فوریهٔ سریع به زبان جاوا در زیر آمده‌است که ورودی تابع FFT یک آرایه از اعداد double با اندازهٔ توانی از ۲ است:
+
+// FFT.java
+public class FFT {
+public static Complex[] fft(double[] input) {
+int inputLength = input.length;
+
+if (inputLength == 1) {
+// returning an array with just one member
+return new Complex[] { new Complex(input[0], 0) };
+}
+
+double[] evens = new double[inputLength / 2];
+double[] odds = new double[inputLength / 2];
+for (int i = 0; i <inputLength; i++) {
+if (i % 2 == 0)
+evens[i / 2] = input[i];
+else
+odds[i / 2] = input[i];
+}
+Complex[] evensFFT = fft(evens);
+Complex[] oddsFFT = fft(odds);
+
+double wSize = 2 * Math.PI / inputLength;
+
+Complex[] result = new Complex[inputLength];
+int inputLengthHalf = inputLength / 2;
+for (int k = 0; k <inputLengthHalf; k++) {
+Complex temp = Complex.mul(
+new Complex(Math.cos(wSize * k), Math.sin(wSize * k)),
+oddsFFT[k]);
+result[k] = Complex.add(evensFFT[k], temp);
+result[k + inputLengthHalf] = Complex.sub(evensFFT[k], temp);
+}
+return result;
+}
+}
+
+// Complex.java
+class Complex {
+private double real;
+private double imaginary;
+
+public Complex(double real, double imaginary) {
+this.real = real;
+this.imaginary = imaginary;
+}
+
+@Override
+public String toString() {
+return String.format("%.3f %.3f", real, imaginary);
+}
+
+public double getReal() {
+return real;
+}
+
+public double getImaginary() {
+return imaginary;
+}
+
+public static Complex add(Complex a, Complex b) {
+return new Complex(a.real + b.real, a.imaginary + b.imaginary);
+}
+
+public static Complex sub(Complex a, Complex b) {
+return new Complex(a.real - b.real, a.imaginary - b.imaginary);
+}
+
+public static Complex mul(Complex a, Complex b) {
+return new Complex(a.real * b.real - a.imaginary * b.imaginary,
+a.real * b.imaginary + a.imaginary * b.real);
+}
+}
+
+ پیاده‌سازی با C++ 
+// AVal - an array of data being analyzed, Nvl - the length of the array must be a multiple degree 2.
+// FTvl - an array of the values ​​obtained, Nft - the length of the array must be equal to Nvl.
+
+const double TwoPi = 6.283185307179586;
+
+void FFTAnalysis(double *AVal, double *FTvl, int Nvl, int Nft) {
+  int i, j, n, m, Mmax, Istp;
+  double Tmpr, Tmpi, Wtmp, Theta;
+  double Wpr, Wpi, Wr, Wi;
+  double *Tmvl;
+
+  n = Nvl * 2; Tmvl = new double[n+1];
+
+  for (i = 0; i <Nvl; i++) {
+    j = i * 2; Tmvl[j] = 0; Tmvl[j+1] = AVal[i];
+  }
+
+  i = 1; j = 1;
+  while (i <n) {
+    if (j> i) {
+      Tmpr = Tmvl[i]; Tmvl[i] = Tmvl[j]; Tmvl[j] = Tmpr;
+      Tmpr = Tmvl[i+1]; Tmvl[i+1] = Tmvl[j+1]; Tmvl[j+1] = Tmpr;
+    }
+    i = i + 2; m = Nvl;
+    while ((m>= 2) && (j> m)) {
+      j = j - m; m = m>> 2;
+    }
+    j = j + m;
+  }
+
+  Mmax = 2;
+  while (n> Mmax) {
+    Theta = -TwoPi / Mmax; Wpi = Sin(Theta);
+    Wtmp = Sin(Theta / 2); Wpr = Wtmp * Wtmp * 2;
+    Istp = Mmax * 2; Wr = 1; Wi = 0; m = 1;
+
+    while (m <Mmax) {
+      i = m; m = m + 2; Tmpr = Wr; Tmpi = Wi;
+      Wr = Wr - Tmpr * Wpr - Tmpi * Wpi;
+      Wi = Wi + Tmpr * Wpi - Tmpi * Wpr;
+
+      while (i <n) {
+        j = i + Mmax;
+        Tmpr = Wr * Tmvl[j] - Wi * Tmvl[j+1];
+        Tmpi = Wi * Tmvl[j] + Wr * Tmvl[j+1];
+
+        Tmvl[j] = Tmvl[i] - Tmpr; Tmvl[j+1] = Tmvl[i+1] - Tmpi;
+        Tmvl[i] = Tmvl[i] + Tmpr; Tmvl[i+1] = Tmvl[i+1] + Tmpi;
+        i = i + Istp;
+      }
+    }
+
+    Mmax = Istp;
+  }
+
+  for (i = 1; i <Nft; i++) {
+    j = i * 2; FTvl[i] = Sqrt(Sqr(Tmvl[j]) + Sqr(Tmvl[j+1]));
+  }
+
+  delete []Tmvl;
+}
+
+ جستارهای وابسته 
+ فاکتورهای اولیه الگوریتم تبدیل سریع فوریه Prime-factor FFT algorithm
+ الگوریتم تبدیل سریع فوریه براون
+ الگوریتم تبدیل سریع فوریه ریدر
+ الگوریتم تبدیل سریع فوریه بلوستین
+ روش همپوشانی جمع
+ تبدیل سریع فوریه در غرب
+ سری زمانی
+
+ منابع 
+
+ جبر خطّی عددی (انگلیسی)
+ مقدمه‌ای بر ریاضیات کاربردی (انگلیسی)
+ ریاضیات مهندسی پیشرفته - اروین کرویت سیگ - ترجمه عدنانی، قلندرزاده، نورعلی‌شاهی - جلد دوم - صفحات ۷۵ الی ۸۳ (فارسی)
+
+ http://en.wikipedia.org/w/index.php?title=Fast_Fourier_transform&oldid=464516132
+ Strang, Gilbert (۱۹ ژوئیه ۲۰۰۵), Linear Algebra and Its Applications (4th ed.), Brooks Cole, 
+ Gonzalez, R. C. , and Woods, R. E. (2002), Digital Image Processing (2nd ed.), Prentice-Hall, Inc. , 
+
+ پیوند به بیرون 
+
+ Fast Fourier Algorithm
+ Fast Fourier Transforms, Connexions online book edited by C. Sidney Burrus, with chapters by C. Sidney Burrus, Ivan Selesnick, Markus Pueschel, Matteo Frigo, and Steven G. Johnson (2008).
+ Links to FFT code and information online.
+ National Taiwan University – FFT
+ FFT programming in C++ — Cooley–Tukey algorithm.
+ Online documentation, links, book, and code.
+ Using FFT to construct aggregate probability distributions
+ Sri Welaratna, "30 years of FFT Analyzers", Sound and Vibration (January 1997, 30th anniversary issue). A historical review of hardware FFT devices.
+ FFT Basics and Case Study Using Multi-Instrument
+ FFT Textbook notes, PPTs, Videos at Holistic Numerical Methods Institute.
+ ALGLIB FFT Code GPL Licensed multilanguage (VBA, C++, Pascal, etc.) numerical analysis and data processing library.
+
+رده:الگوریتم‌های تبدیل سریع فوریه
+رده:پردازش سیگنال دیجیتال
+رده:تبدیل‌های گسسته
+رده:مسئله‌های حل‌نشده در علوم رایانه
